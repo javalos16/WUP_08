@@ -79,4 +79,3 @@ The adjusted r square for weight is 0.7423
 
 We have conducted multiple test and between the (lowest) to the (highest) data. The lowest was found to be the age(0.5073), head width (0.5321), weight (0.7423), CHEST(0.7869), head length (0.8483). After running these test, based on the result we can conclude that head length is the best because it is the largest. 
 
- 
