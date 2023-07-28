@@ -1,6 +1,6 @@
 ---
 title: "simpleRegress"
-author: "put your name here"
+author: "javalos16"
 date: "Fall 2020"
 output: html_document
 ---
@@ -20,13 +20,63 @@ bears$MONTH<- as.factor(bears$MONTH)
 
 ## Model LENGTH ~ NECK  this is an example  
 
+We are to compute regression models finding one regression model that does the best job in predicting the bear length and its correspondence to the bears neck size, age head weight and head length.
+
 ```{r}
 simp <- lm(LENGTH~NECK,data=bears)
 plot(LENGTH~NECK,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
+The adjusted r square that is the largest is the best. For the neck size is 0.7476 
+
+```{r}
+simp <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+the r adjust r square for head lenght is 0.8483 
+
+```{r}
+simp <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+The adjusted r square for head width is 0.5321
 
 
-## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
+```{r}
+simp <- lm(LENGTH~AGE,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(simp)
+summary.lm(simp)
+```
 
+The adjusted r square for head width is 0.5073
+
+```{r}
+simp <- lm(LENGTH~CHEST,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+The adjusted r square for CHEST is 0.7869
+
+```{r}
+simp <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+The adjusted r square for weight is 0.7423
+
+### Discussion and Conclution
+
+We have conducted multiple test and between the (lowest) to the (highest) data. The lowest was found to be the age(0.5073), head width (0.5321), weight (0.7423), CHEST(0.7869), head length (0.8483). After running these test, based on the result we can conclude that head length is the best because it is the largest. 
+
+ 
